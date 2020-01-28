@@ -1,4 +1,7 @@
-package com.board.List;
+package com.board.controller.action;
+
+import com.board.vo.*;
+import com.board.dao.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +16,7 @@ public class BoardPagingAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		
-		String url="/boardList_pg.jsp";
+		String url="/view/board/boardList_pg.jsp";
 		
 		int spage = 1;
 		String page = request.getParameter("page");

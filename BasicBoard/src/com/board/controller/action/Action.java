@@ -1,4 +1,4 @@
-package com.board.List;
+package com.board.controller.action;
 
 import java.io.IOException;
 

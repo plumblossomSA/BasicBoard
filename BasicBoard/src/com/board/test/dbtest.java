@@ -1,8 +1,8 @@
 package com.board.test;
 
+import com.board.dao.*;
+import com.board.vo.*;
 import java.util.List;
-import com.board.List.BoardDAO;
-import com.board.List.BoardVO;
 
 public class dbtest {
 public static void main(String[] args) {

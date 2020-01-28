@@ -1,4 +1,4 @@
-package com.board.List;
+package com.board.vo;
 
 public class BoardVO {
 	

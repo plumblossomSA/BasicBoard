@@ -1,4 +1,7 @@
-package com.board.List;
+package com.board.dao;
+
+import com.board.vo.*;
+import com.board.util.*;
 
 import java.sql.*;
 import java.util.*;

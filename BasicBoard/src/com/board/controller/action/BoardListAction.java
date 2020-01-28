@@ -1,4 +1,7 @@
-package com.board.List;
+package com.board.controller.action;
+
+import com.board.vo.*;
+import com.board.dao.*;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +17,7 @@ public class BoardListAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		System.out.println("BoardListAction.java ½ÇÇà");
-		String url="/boardList.jsp";
+		String url="/view/board/boardList.jsp";
 		
 		BoardDAO dao = new BoardDAO();
 		//BoardDAO dao = BoardDAO.getInstance();

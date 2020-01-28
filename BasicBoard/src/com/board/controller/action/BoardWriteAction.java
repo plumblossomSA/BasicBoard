@@ -1,4 +1,7 @@
-package com.board.List;
+package com.board.controller.action;
+
+import com.board.vo.*;
+import com.board.dao.*;
 
 import java.io.IOException;
 

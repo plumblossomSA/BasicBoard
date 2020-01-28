@@ -1,4 +1,4 @@
-package com.board.List;
+package com.board.util;
 
 import java.sql.Connection;
 import java.sql.*;
