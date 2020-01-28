@@ -20,7 +20,7 @@ public class BoardWriteAction implements Action {
 		//파일업로드(경로, 파일크기, 인코딩, 파일이름 중첩정책)
 		//String uploadPath = request.getServletContext().getRealPath("/file/upload"); //파일이 저장될 서버의 경로, 되도록이면 getRealPath 이용하기
 		//String uploadPath = request.getRealPath("/fileUpload");
-		String uploadPath = "D:\\05. git_storage\\BasicBoard\\BasicBoard\\WebContent\\fileUpload";
+		String uploadPath = "D:\\05. git_storage\\BasicBoard\\BasicBoard\\WebContent\\file\\upload";
 		System.out.println(uploadPath);
 		
 		int size = 20*1024*1024; //20MB

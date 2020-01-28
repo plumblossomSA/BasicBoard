@@ -55,6 +55,10 @@ public class ActionFactory {
 		}else if(command.equals("board_paging")) {
 			
 			action = new BoardPagingAction();
+			
+		}else if(command.equals("board_download")) {
+			
+			action = new BoardDownAction();
 		}
 		
 		System.out.println("ActionFactory½ÇÇà");

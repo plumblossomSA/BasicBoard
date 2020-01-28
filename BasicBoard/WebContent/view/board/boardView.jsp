@@ -25,7 +25,8 @@
 			</tr>
 			<tr>
 				<th>상세파일</th>
-				<td>${boardview.fname}</td>
+				<!-- <td>${boardview.fname}</td> -->
+				<td><a href="BoardServlet?command=board_download&fname=${boardview.fname}">${boardview.fname}</a></td>
 			</tr>
 
 		</table>
