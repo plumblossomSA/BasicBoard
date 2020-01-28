@@ -109,6 +109,7 @@ public class BoardDAO {
 				vo.setlName(rs.getString("linux_name"));
 				vo.setlIp(rs.getString("linux_ip"));
 				vo.setPmAddr(rs.getString("pc_macaddr"));
+				vo.setFname(rs.getString("fname"));
 
 			}
 		}catch(Exception e) {

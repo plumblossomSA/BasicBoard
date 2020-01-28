@@ -26,6 +26,7 @@ public class BoardUpdateAction implements Action{
 		vo.setlName(request.getParameter("name")); //웹에서 자바로 데이터 받아오기
 		vo.setlIp(request.getParameter("ipaddr"));
 		vo.setPmAddr(request.getParameter("macaddr"));
+		//vo.setFname(request.getParameter("fname"));
 		
 		BoardDAO dao = new BoardDAO();
 		

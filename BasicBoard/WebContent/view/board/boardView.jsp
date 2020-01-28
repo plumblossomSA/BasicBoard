@@ -11,22 +11,26 @@
 		<h3>컴퓨터이름 : ${boardview.lName}</h3>
 		<table border=1 class="list">
 
-				<tr>
-					<th>컴퓨터이름</th>
-					<td>${boardview.lName}</td>
-				</tr>
-				<tr>
-					<th>IP주소</th>
-					<td>${boardview.lIp}</td>
-				</tr>
-				<tr>
-					<th>PCMac주소</th>
-					<td>${boardview.pmAddr}</td>
-				</tr>
+			<tr>
+				<th>컴퓨터이름</th>
+				<td>${boardview.lName}</td>
+			</tr>
+			<tr>
+				<th>IP주소</th>
+				<td>${boardview.lIp}</td>
+			</tr>
+			<tr>
+				<th>PCMac주소</th>
+				<td>${boardview.pmAddr}</td>
+			</tr>
+			<tr>
+				<th>상세파일</th>
+				<td>${boardview.fname}</td>
+			</tr>
 
 		</table>
-		<br>
-		<a href="BoardServlet?command=board_update_form&seq=${boardview.seq}">수정</a>
+		<br> <a
+			href="BoardServlet?command=board_update_form&seq=${boardview.seq}">수정</a>
 		<a href="BoardServlet?command=board_delete&seq=${boardview.seq}">삭제</a>
 		<!-- <input type="button" value="수정" onClick="location.href='boardUpdate.jsp'"> 
 		<input type="button" value="삭제"> 
