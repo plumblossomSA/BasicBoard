@@ -40,7 +40,7 @@ public class BoardDAO {
 			vo.setlName(rs.getString("linux_name"));
 			vo.setlIp(rs.getString("linux_ip"));
 			vo.setPmAddr(rs.getString("pc_macaddr"));
-			vo.setUserCnt(rs.getString("user_cnt"));
+			vo.setFname(rs.getString("fname"));
 			vo.setRegDate(rs.getString("create_dt"));
 			
 			list.add(vo);
@@ -61,7 +61,7 @@ public class BoardDAO {
 	
 	public void insertBoard(BoardVO vo) {
 		String sql="";
-		sql="insert into info_table(linux_name, linux_ip, pc_macaddr) values(?,?,?)";
+		sql="insert into info_table(linux_name, linux_ip, pc_macaddr, fname) values(?,?,?,?)";
 		//sql="insert into info_table(linux_name, linux_ip, pc_macaddr, create_dt) values(?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -72,6 +72,7 @@ public class BoardDAO {
 			pstmt.setString(1, vo.getlName());
 			pstmt.setString(2, vo.getlIp());
 			pstmt.setString(3, vo.getPmAddr());
+			pstmt.setString(4, vo.getFname()); //파일 데이터 받기
 			//pstmt.setString(4, vo.getRegDate());
 			
 			pstmt.executeUpdate();
@@ -231,7 +232,7 @@ public class BoardDAO {
 	 			voa.setlName(rs.getString("linux_name"));
 	 			voa.setlIp(rs.getString("linux_ip"));
 	 			voa.setPmAddr(rs.getString("pc_macaddr"));
-	 			voa.setUserCnt(rs.getString("user_cnt"));
+	 			voa.setFname(rs.getString("fname"));
 	 			voa.setRegDate(rs.getString("create_dt"));
 	 			
 	 			boardList.add(voa);

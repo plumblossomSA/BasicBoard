@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
 @WebServlet("/BoardServlet") 
 //URL과 서블릿 매핑
 //톰캣은 어노테이션을 확인하여 "해당 servlet으로 접근하기 위해서는 URL에 BoardServlet으로 접근하면 된다는 매핑을 함.

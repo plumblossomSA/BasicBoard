@@ -26,6 +26,10 @@
 		<th>PC_Mac주소</th>
 		<td><input type="text" name="macaddr" value="${boardview.pmAddr}"></td>
 	</tr>
+	<tr>
+		<th>파일 업로드</th>
+		<td><input type="text" name="file_upload"></td>
+	</tr>
 <!-- 	
 	<tr>
 		<th>등록일</th>

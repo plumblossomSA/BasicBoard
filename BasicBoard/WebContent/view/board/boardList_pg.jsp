@@ -27,7 +27,7 @@
 				<th>리눅스이름</th>
 				<th>리눅스IP</th>
 				<th>PC 맥 주소</th>
-				<th>사용자수</th>
+				<th>상세파일</th>
 				<th>등록날짜</th>
 			</tr>
 
@@ -41,7 +41,7 @@
 						</a></td>
 						<td><c:out value="${board.lIp}" /></td>
 						<td><c:out value="${board.pmAddr}" /></td>
-						<td><c:out value="${board.userCnt}" /></td>
+						<td><c:out value="${board.fname}" /></td>
 						<td><c:out value="${board.regDate}" /></td>
 					</tr>
 				</c:forEach>

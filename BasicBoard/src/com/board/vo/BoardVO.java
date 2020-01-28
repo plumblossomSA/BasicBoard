@@ -8,6 +8,10 @@ public class BoardVO {
 	private String lIp; //IP주소
 	private String pmAddr; //MAC 주소
 	private String userCnt; //사용자수
+	private String fname; //파일업로드
+	private String fpath; //파일경로
+	
+
 	private String regDate; //등록일
 	
 	public int getSeq() {
@@ -34,12 +38,25 @@ public class BoardVO {
 	public void setPmAddr(String pmAddr) {
 		this.pmAddr = pmAddr;
 	}
-	public String getUserCnt() {
-		return userCnt;
+	public String getFname() {
+		return fname;
 	}
-	public void setUserCnt(String userCnt) {
-		this.userCnt = userCnt;
+	public void setFname(String fname) {
+		this.fname = fname;
 	}
+	public String getFpath() {
+		return fpath;
+	}
+	public void setFpath(String fpath) {
+		this.fpath = fpath;
+	}
+	
+//	public String getUserCnt() {
+//		return userCnt;
+//	}
+//	public void setUserCnt(String userCnt) {
+//		this.userCnt = userCnt;
+//	}	
 	public String getRegDate() {
 		return regDate;
 	}
