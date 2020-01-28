@@ -1,48 +1,64 @@
 package com.board.controller.action;
 
-import java.net.URLEncoder;
-import com.board.util.FileDownLoadHelper;
-
+import java.io.*;
+import java.io.File;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class BoardDownAction implements Action {
+public class BoardDownAction implements Action{
 	
-
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	
+	//다운로드할 파일명을 가져온다
+	String fileName = request.getParameter("fname");
+	
+	//파일이 있는 절대경로를 가져온다
+	String folder = request.getServletContext().getRealPath("file/upload");
+	
+	//파일의 절대 경로를 만든다
+	String filePath = folder+"\\"+fileName;
+	System.out.println("파일의 절대경로");
+	System.out.println(filePath);
+	
+	try {
+		File file = new File(filePath);
+		byte b[] = new byte[(int) file.length()];
 		
-		request.setCharacterEncoding("utf-8");
+		//page의 contentType등을 동적으로 바꾸기 위해 초기화
 		response.reset();
-		String fileName = request.getParameter("fname");
-		System.out.println(fileName);
+		response.setContentType("application/octet-stream");
 		
-		String downloadPath = "D:\\05. git_storage\\BasicBoard\\BasicBoard\\WebContent\\file\\download";
-		String path = downloadPath.trim() + "\\" + fileName.trim();
-		System.out.println(path);
+		//한글인코딩
+		String encoding = new String(fileName.getBytes("euc-kr"),"8859_1");
 		
-		String fileName2 = URLEncoder.encode(fileName, "UTF-8");
+		//파일 링크를 클릭했을 때 다운로드 저장화면이 출력되게 처리하는 부분
+		response.setHeader("Content-Disposition", "attachment;filename="+encoding);
+		response.setHeader("Content-Length", String.valueOf(file.length()));
 		
-		response.setContentType("application/x-msdownload");
-		response.setHeader("Content-Disposition", "attachment; filename=\""+fileName2+"\"");
-		response.setHeader("Content-Transfer-Encoding", "binary");
-		response.setHeader("Pragma", "no-cache;");
-		response.setHeader("Expires", "-1;");
-		
-//		out.clear();
-//		out=pageContext.pushBody();
-		
-		try {
-			FileDownLoadHelper.copy(path, response.getOutputStream());
-			response.getOutputStream().close();
-		}catch(Exception e) {
-			System.out.println("ok");
-			e.printStackTrace();
+		if(file.isFile()) {
+			
+			FileInputStream fileInputStream = new FileInputStream(file);
+			ServletOutputStream servletOutputStream = response.getOutputStream();
+			
+			int readNum = 0;
+			while((readNum = fileInputStream.read(b)) != -1) {
+				servletOutputStream.write(b,0,readNum);
+			}
+			
+			servletOutputStream.close();
+			fileInputStream.close();
 		}
+	}catch(Exception e) {
+		System.out.println("Download Exception : " + e.getMessage());
 	}
 	
-
+	//return null;
+		
+	}
 }
+
