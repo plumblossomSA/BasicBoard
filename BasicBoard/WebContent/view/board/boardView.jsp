@@ -1,41 +1,41 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<div id="Wrap" align="center">
-		<h3>ÄÄÇ»ÅÍÀÌ¸§ : ${boardview.lName}</h3>
+		<h3>ì»´í“¨í„°ì´ë¦„ : ${boardview.lName}</h3>
 		<table border=1 class="list">
 
 			<tr>
-				<th>ÄÄÇ»ÅÍÀÌ¸§</th>
+				<th>ì»´í“¨í„°ì´ë¦„</th>
 				<td>${boardview.lName}</td>
 			</tr>
 			<tr>
-				<th>IPÁÖ¼Ò</th>
+				<th>IPì£¼ì†Œ</th>
 				<td>${boardview.lIp}</td>
 			</tr>
 			<tr>
-				<th>PCMacÁÖ¼Ò</th>
+				<th>PCMacì£¼ì†Œ</th>
 				<td>${boardview.pmAddr}</td>
 			</tr>
 			<tr>
-				<th>»ó¼¼ÆÄÀÏ</th>
+				<th>ìƒì„¸íŒŒì¼</th>
 				<!-- <td>${boardview.fname}</td> -->
 				<td><a href="BoardServlet?command=board_download&fname=${boardview.fname}">${boardview.fname}</a></td>
 			</tr>
 
 		</table>
 		<br> <a
-			href="BoardServlet?command=board_update_form&seq=${boardview.seq}">¼öÁ¤</a>
-		<a href="BoardServlet?command=board_delete&seq=${boardview.seq}">»èÁ¦</a>
-		<!-- <input type="button" value="¼öÁ¤" onClick="location.href='boardUpdate.jsp'"> 
-		<input type="button" value="»èÁ¦"> 
-		<input type="button"value="°Ô½Ã±Û¸®½ºÆ®">-->
+			href="BoardServlet?command=board_update_form&seq=${boardview.seq}">ìˆ˜ì •</a>
+		<a href="BoardServlet?command=board_delete&seq=${boardview.seq}">ì‚­ì œ</a>
+		<!-- <input type="button" value="ìˆ˜ì •" onClick="location.href='boardUpdate.jsp'"> 
+		<input type="button" value="ì‚­ì œ"> 
+		<input type="button"value="ê²Œì‹œê¸€ë¦¬ìŠ¤íŠ¸">-->
 	</div>
 </body>
 </html>

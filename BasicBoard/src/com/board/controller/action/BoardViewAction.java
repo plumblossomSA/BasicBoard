@@ -14,6 +14,8 @@ public class BoardViewAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		 
+		request.setCharacterEncoding("utf-8");
+		
 		String url = "/view/board/boardView.jsp";
 		String seq = request.getParameter("seq");
 		int seqr = Integer.parseInt(seq);

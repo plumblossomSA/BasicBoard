@@ -1,45 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<div id="wrap" align="center">
-		<h1>ддг╩ем ╣Н╥о</h1>
+		<h1>Л╩╢М⌠╗М└╟ К⌠╠К║²</h1>
 		<!-- <form name="frm" method="post" action="BoardServlet" enctype="multipart/form-data"> -->
-		 	<form name="frm" method="post" action="BoardServlet?command=board_write"  enctype="multipart/form-data">
+		 	<form name="frm" method="post" action="BoardServlet?command=board_write"  enctype="multipart/form-data" 
+		 		accept-charset="utf-8">
 			<!-- <input type="hidden" name="command" value="board_write"> -->
 			<table>
 				<tr>
-					<th>╦╝╢╙╫╨юл╦╖</th>
+					<th>К╕╛К┬┘Л┼╓Л²╢К╕└</th>
 					<td><input type="text" name="name"></td>
 				</tr>
 				<tr>
-					<th>╦╝╢╙╫╨IPаж╪р</th>
+					<th>К╕╛К┬┘Л┼╓IPЛё╪Л├▄</th>
 					<td><input type="text" name="ipaddr"></td>
 				</tr>
 				<tr>
-					<th>PC_Macаж╪р</th>
+					<th>PC_MacЛё╪Л├▄</th>
 					<td><input type="text" name="macaddr"></td>
 				</tr>
 				<tr>
-					<th>фдюо ╬В╥н╣Е</th>
+					<th>М▄▄Л²╪ Л≈┘К║°К⌠°</th>
 					<td><input type="file" name="fname"></td>
 				</tr>
 				<!-- 	
 	<tr>
-		<th>╣Н╥оюо</th>
+		<th>К⌠╠К║²Л²╪</th>
 		<td><input type="text" name="regdate"></td>
 	</tr>
 -->
 			</table>
-			<br> <br> <input type="submit" value="╣Н╥о"
+			<br> <br> <input type="submit" value="К⌠╠К║²"
 				onclick="return boardCheck()">
-			<!-- submitю╨ formеб╠в ╬х©║ юж╢б ╦П╣Г╣╔юлем╦╕ ют╥б ╣╔юлем╦╕ цЁ╦╝го╢б ╫╨е╘╦Ёф╝╟║ юж╢б ╪╜╧Ж фДюлаЖ╥н юЭ╪ш -->
-			<input type="button" value="╦Я╥о"
+			<!-- submitЛ²─ formМ┐°Й╥╦ Л∙┬Л≈░ Л·┬К┼■ К╙╗К⌠═К█╟Л²╢М└╟К╔╪ Л·┘К═╔ К█╟Л²╢М└╟К╔╪ Л╡≤К╕╛М∙≤К┼■ Л┼╓М│╛К╕╫М┼╦Й╟─ Л·┬К┼■ Л└°К╡└ М▌≤Л²╢Л╖─К║° Л═└Л├║ -->
+			<input type="button" value="К╙╘К║²"
 				onclick="location.href='BoardServlet?command=board_list_pg'">
 		</form>
 	</div>

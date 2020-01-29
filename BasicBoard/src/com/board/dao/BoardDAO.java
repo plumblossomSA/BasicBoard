@@ -20,7 +20,7 @@ public class BoardDAO {
 	//public List<BoardVO> selectAllBoards() throws SQLException{
 	public List<BoardVO> selectAllBoards(){
 		
-		String sql = "select * from info_table";
+		String sql = "select * from info_table2";
 		System.out.println("BoardDAO 실행1");
 		
 		List<BoardVO> list = new ArrayList<BoardVO>();
@@ -61,8 +61,8 @@ public class BoardDAO {
 	
 	public void insertBoard(BoardVO vo) {
 		String sql="";
-		sql="insert into info_table(linux_name, linux_ip, pc_macaddr, fname) values(?,?,?,?)";
-		//sql="insert into info_table(linux_name, linux_ip, pc_macaddr, create_dt) values(?,?,?,?)";
+		sql="insert into info_table2(linux_name, linux_ip, pc_macaddr, fname) values(?,?,?,?)";
+		//sql="insert into info_table2(linux_name, linux_ip, pc_macaddr, create_dt) values(?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -86,7 +86,7 @@ public class BoardDAO {
 	}
 	
 	public BoardVO selectOneBoard(int seq) {
-		String sql="select * from info_table where seq=?";
+		String sql="select * from info_table2 where seq=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -123,7 +123,7 @@ public class BoardDAO {
 	
 	public void updateBoard(BoardVO vo) {
 		
-		String sql="update info_table set linux_name=?, linux_ip=?, pc_macaddr=? where seq=?";
+		String sql="update info_table2 set linux_name=?, linux_ip=?, pc_macaddr=? where seq=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -153,7 +153,7 @@ public class BoardDAO {
 	
 	public void deleteBoard(BoardVO vo) {
 		
-		String sql = "delete from info_table where seq=?";
+		String sql = "delete from info_table2 where seq=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -178,7 +178,7 @@ public class BoardDAO {
 	//public int getBoardCnt(BoardVO vo) {
 	public int getBoardCnt() { //게시글 수 조회
 		
-		String sql = "SELECT COUNT(*) FROM info_table;";
+		String sql = "SELECT COUNT(*) FROM info_table2;";
 		int boardListcnt = 0;
 		
 		Connection conn = null;
@@ -208,7 +208,7 @@ public class BoardDAO {
 	public List<BoardVO> getBoardListWithPaging(int pageNum) {
 		
 		String BOARD_LIST_WITH_PAGING 
-		= " SELECT * FROM (SELECT @NO := @NO +1 AS ROWNUM, info_table.* FROM ( SELECT * FROM info_table) info_table, ( SELECT @NO := 0) B) C WHERE C.ROWNUM BETWEEN ? AND ?";
+		= " SELECT * FROM (SELECT @NO := @NO +1 AS ROWNUM, info_table2.* FROM ( SELECT * FROM info_table2) info_table2, ( SELECT @NO := 0) B) C WHERE C.ROWNUM BETWEEN ? AND ?";
 	
 		
 		List<BoardVO> boardList = new ArrayList<BoardVO>();

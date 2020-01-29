@@ -1,56 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <div id="wrap" align="center">
-<h3>°Ô½Ã±Û ¼öÁ¤</h3>
+<h3>ê²Œì‹œê¸€ ìˆ˜ì •</h3>
 <form action="BoardServlet" method="post" name="frm">
 <input type="hidden" name="command" value="board_update">
 <input type="hidden" name="seq" value="${boardview.seq}">
 
 <table>
 	<tr>
-		<th>¸®´ª½ºÀÌ¸§</th>
+		<th>ë¦¬ëˆ…ìŠ¤ì´ë¦„</th>
 		<td><input type="text" name="name" value="${boardview.lName}"></td>
 	</tr>
 	<tr>
-		<th>¸®´ª½ºIPÁÖ¼Ò</th>
+		<th>ë¦¬ëˆ…ìŠ¤IPì£¼ì†Œ</th>
 		<td><input type="text" name="ipaddr" value="${boardview.lIp}"></td>
 	</tr>
 	<tr>
-		<th>PC_MacÁÖ¼Ò</th>
+		<th>PC_Macì£¼ì†Œ</th>
 		<td><input type="text" name="macaddr" value="${boardview.pmAddr}"></td>
 	</tr>
 <!-- 	
 	<tr>
-		<th>µî·ÏÀÏ</th>
+		<th>ë“±ë¡ì¼</th>
 		<td><input type="text" name="regdate"></td>
 	</tr>
 -->	
 	</table>
 	<br>
-	<input type="submit" value="¼öÁ¤" onclick="return boardCheck()"/>
+	<input type="submit" value="ìˆ˜ì •" onclick="return boardCheck()"/>
 </form>
 
 <script>
 function boardCheck(){
 	if(document.frm.name.value.length==0){
-		alert("ÄÄÇ»ÅÍÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+		alert("ì»´í“¨í„°ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
 		frm.name.focus();
 		return false;
 	}
 	if(document.frm.ipaddr.value.length==0){
-		alert('IPÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä');
+		alert('IPì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”');
 		frm.ipaddr.focus();
 		return false;
 	}
 	if(document.frm.ipaddr.value.length==0){
-		alert('PC ¸ÆÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä');
+		alert('PC ë§¥ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”');
 		frm.macaddr.focus();
 		return false;
 	}

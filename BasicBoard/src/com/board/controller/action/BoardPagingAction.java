@@ -15,6 +15,7 @@ public class BoardPagingAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
+		request.setCharacterEncoding("utf-8");
 		
 		String url="/view/board/boardList_pg.jsp";
 		

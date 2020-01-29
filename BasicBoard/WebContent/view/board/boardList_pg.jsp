@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -8,27 +8,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
 
 	<div id="wrap" align="center">
-		<h1>¸®´ª½º Á¤º¸</h1>
+		<h1>ë¦¬ëˆ…ìŠ¤ ì •ë³´</h1>
 
 		<table class="list" border=1>
 			<tr>
 				<td colspan="7" style="text-align: left"><a
-					href="BoardServlet?command=board_write_form">ÄÄÇ»ÅÍµî·Ï</a></td>
+					href="BoardServlet?command=board_write_form">ì»´í“¨í„°ë“±ë¡</a></td>
 			</tr>
 			<tr>
-				<th>¹øÈ£</th>
-				<th>¸®´ª½ºÀÌ¸§</th>
-				<th>¸®´ª½ºIP</th>
-				<th>PC ¸Æ ÁÖ¼Ò</th>
-				<th>»ó¼¼ÆÄÀÏ</th>
-				<th>µî·Ï³¯Â¥</th>
+				<th>ë²ˆí˜¸</th>
+				<th>ë¦¬ëˆ…ìŠ¤ì´ë¦„</th>
+				<th>ë¦¬ëˆ…ìŠ¤IP</th>
+				<th>PC ë§¥ ì£¼ì†Œ</th>
+				<th>ìƒì„¸íŒŒì¼</th>
+				<th>ë“±ë¡ë‚ ì§œ</th>
 			</tr>
 
 			<div id="ContentsForm">
@@ -49,7 +49,7 @@
 		</table>
 			<br>
 				<c:if test="${startPage != 1}">
-					<a href='BoardServlet?command=board_paging&page=${startPage-1}'>[ÀÌÀü]</a>
+					<a href='BoardServlet?command=board_paging&page=${startPage-1}'>[ì´ì „]</a>
 				</c:if>
 
 				<c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
@@ -58,7 +58,7 @@
 				</c:forEach>
 				
 				<c:if test="${endPage != maxPage }">
-					<a href='BoardServlet?command=board_paging&page=${endPage+1}'>[´ÙÀ½]</a>
+					<a href='BoardServlet?command=board_paging&page=${endPage+1}'>[ë‹¤ìŒ]</a>
 				</c:if>
 		
 	</div>

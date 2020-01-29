@@ -23,6 +23,7 @@ public class BoardServlet extends HttpServlet{
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		//doGet : servlet에서 get방식으로 전달 받았을 때, 실행되는 메소드
 		//로그기록확인
 		String command = request.getParameter("command"); //board_list라는 command요청을 받음
@@ -44,7 +45,7 @@ public class BoardServlet extends HttpServlet{
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request,response);
 	}
 

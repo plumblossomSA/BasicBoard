@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@page import="com.board.controller.*"%>
 <%@page import="javax.servlet.*"%>
@@ -7,15 +7,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8\">
 <title>Insert title here</title>
 </head>
 <body>
 <%
 
 response.sendRedirect("BoardServlet?command=board_list_pg");
-//response.sendRedirect("BoardServlet?command=board_List"); //BoardServlet.java·Î command¸¦ °¡Áö°í ÀÌµ¿
-//response.sendRedirect ÆäÀÌÁö ÀÌµ¿
+//response.sendRedirect("BoardServlet?command=board_List"); //BoardServlet.javaë¡œ commandë¥¼ ê°€ì§€ê³  ì´ë™
+//response.sendRedirect í˜ì´ì§€ ì´ë™
 
 %>
 
