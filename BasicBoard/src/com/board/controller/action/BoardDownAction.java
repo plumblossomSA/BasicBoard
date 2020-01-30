@@ -19,8 +19,6 @@ public class BoardDownAction implements Action{
 	String folder = request.getServletContext().getRealPath("file/upload");
 	
 	String filePath = folder+"\\"+fileName;
-	System.out.println("������ ������");
-	System.out.println(filePath);
 	
 	try {
 		File file = new File(filePath);

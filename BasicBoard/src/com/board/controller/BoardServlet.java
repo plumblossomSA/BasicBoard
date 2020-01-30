@@ -30,13 +30,11 @@ public class BoardServlet extends HttpServlet{
 		
 		Action action = af.getAction(command); 
 
-		System.out.println("test1");
 		
 		if(action!=null) {
 			action.execute(request, response);
 		}
-		
-		System.out.println("test2");
+		;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

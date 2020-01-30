@@ -26,7 +26,7 @@ public class BoardWriteAction implements Action {
 		String uploadPath = "D:\\05. git_storage\\BasicBoard\\BasicBoard\\WebContent\\file\\upload";
 		int size = 20 * 1024 * 1024; // 20MB
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new AImapFileRenamePolicy());
-
+		//-> 파일 받은 후, 파일명 랜덤숫자+오늘날짜 기준으로 변경후 서버에 업로드.
 		Enumeration formNames = multi.getFileNames();
 
 		String fileInput = "";
@@ -49,14 +49,6 @@ public class BoardWriteAction implements Action {
 			}
 		}
 		
-		System.out.println("받은 파일 객체 이름출력해보기");
-		System.out.println(fileInput);  //fname
-		System.out.println(fileName);   //9852620200130162926.jpg
-		System.out.println(type);       //image/jpeg
-		System.out.println(fileObj);    //D:\05. git_storage\BasicBoard\BasicBoard\WebContent\file\upload\9852620200130162926.jpg
-		System.out.println(originFileName); //업로드테스트.jpg
-		System.out.println(fileExtend);  //jpg
-		System.out.println(fileSize);    //123804
 
 		BoardVO vo = new BoardVO();
 		vo.setlName(multi.getParameter("name"));
