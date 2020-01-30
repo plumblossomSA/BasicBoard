@@ -4,56 +4,71 @@ import com.board.vo.*;
 import com.board.dao.*;
 
 import java.io.IOException;
-import java.net.URLEncoder;
+//import java.net.URLEncoder;
+import java.util.*;
+import java.text.*;
+import java.io.File;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.AImapFileRenamePolicy;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.oreilly.servlet.multipart.FileUploadRename;
 
 public class BoardWriteAction implements Action {
-	
+
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
-		//ÆÄÀÏ¾÷·Îµå(°æ·Î, ÆÄÀÏÅ©±â, ÀÎÄÚµù, ÆÄÀÏÀÌ¸§ ÁßÃ¸Á¤Ã¥)
-		//String uploadPath = request.getServletContext().getRealPath("/file/upload"); //ÆÄÀÏÀÌ ÀúÀåµÉ ¼­¹öÀÇ °æ·Î, µÇµµ·ÏÀÌ¸é getRealPath ÀÌ¿ëÇÏ±â
-		//String uploadPath = request.getRealPath("/fileUpload");
-		String uploadPath = "D:\\05. git_storage\\BasicBoard\\BasicBoard\\WebContent\\file\\upload"; //ÆÄÀÏÀ» ÀúÀåÇÒ °æ·Î
-		int size = 20*1024*1024; //20MB ÆÄÀÏ ÃÖ´ë »çÀÌÁî
-		
-		//String fname ="";
-		//String
-		
-		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
-		//MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "euc-kr", new DefaultFileRenamePolicy()); //ÆÄÀÏ¸íÀº ±úÁöÁö ¾ÊÁö¸¸, ¸®½ºÆ® µî·ÏÀÌ ¾ÈµÊ.
-		
-	
-		BoardVO vo = new BoardVO();
-		System.out.println("½ÇÇà‰ç´ÂÁö È®ÀÎ ");
-		vo.setlName(multi.getParameter("name")); //À¥¿¡¼­ ÀÚ¹Ù·Î µ¥ÀÌÅÍ ¹Ş¾Æ¿À±â
-		vo.setlIp(multi.getParameter("ipaddr"));
-		vo.setPmAddr(multi.getParameter("macaddr"));
-		
-		
-		//ÆÄÀÏ¾÷·Îµå1
-		if(multi.getFilesystemName("fname") != null) {
-			String fname = multi.getFilesystemName("fname");
-			fname = URLEncoder.encode(fname); //ÀÎÄÚ´õ¸¦ »ç¿ëÇÏ¸é, À¥»ó¿¡¼­ ÆÄÀÏ¸íÀÌ ±úÁöÁø ¾ÊÁö¸¸,%3F%..½ÄÀ¸·Î ³ª¿È.½ÇÁ¦ dir¿¡ ÀúÀåµÈÆÄÀÏ¸íÀº ¿©ÀüÈ÷ ±úÁü.
-			vo.setFname(fname);
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String uploadPath = "D:\\05. git_storage\\BasicBoard\\BasicBoard\\WebContent\\file\\upload";
+		int size = 20 * 1024 * 1024; // 20MB
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new AImapFileRenamePolicy());
+
+		Enumeration formNames = multi.getFileNames();
+
+		String fileInput = "";
+		String fileName = "";
+		String type = "";
+		File fileObj = null;
+		String originFileName = "";
+		String fileExtend = "";
+		String fileSize = "";
+
+		while (formNames.hasMoreElements()) {
+			fileInput = (String) formNames.nextElement(); // íŒŒì¼ì¸í’‹ ì´ë¦„
+			fileName = multi.getFilesystemName(fileInput); // íŒŒì¼ëª…
+			if (fileName != null) {
+				type = multi.getContentType(fileInput); // ì½˜í…íŠ¸íƒ€ì…
+				fileObj = multi.getFile(fileInput); // íŒŒì¼ê°ì²´
+				originFileName = multi.getOriginalFileName(fileInput); // ì´ˆê¸° íŒŒì¼ëª…
+				fileExtend = fileName.substring(fileName.lastIndexOf(".") + 1); // íŒŒì¼ í™•ì¥ì
+				fileSize = String.valueOf(fileObj.length()); // íŒŒì¼í¬ê¸°
+			}
 		}
 		
-		
-		
+		System.out.println("ë°›ì€ íŒŒì¼ ê°ì²´ ì´ë¦„ì¶œë ¥í•´ë³´ê¸°");
+		System.out.println(fileInput);  //fname
+		System.out.println(fileName);   //9852620200130162926.jpg
+		System.out.println(type);       //image/jpeg
+		System.out.println(fileObj);    //D:\05. git_storage\BasicBoard\BasicBoard\WebContent\file\upload\9852620200130162926.jpg
+		System.out.println(originFileName); //ì—…ë¡œë“œí…ŒìŠ¤íŠ¸.jpg
+		System.out.println(fileExtend);  //jpg
+		System.out.println(fileSize);    //123804
+
+		BoardVO vo = new BoardVO();
+		vo.setlName(multi.getParameter("name"));
+		vo.setlIp(multi.getParameter("ipaddr"));
+		vo.setPmAddr(multi.getParameter("macaddr"));
+		vo.setFname(fileName);
+
 		BoardDAO dao = new BoardDAO();
 		dao.insertBoard(vo);
-		
+
 		new BoardPagingAction().execute(request, response);
-		
-	
+
 	}
-		
 
 }

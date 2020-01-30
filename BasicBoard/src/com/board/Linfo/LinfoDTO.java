@@ -2,12 +2,12 @@ package com.board.Linfo;
 
 public class LinfoDTO {
 	
-	private String seq; //Number
-	private String lName; //Linux 컴퓨터 이름
-	private String lIp; //IP주소
-	private String pmAddr; //MAC 주소
-	private String userCnt; //사용자수
-	private String regDate; //등록일
+	private String seq; 
+	private String lName; 
+	private String lIp; 
+	private String pmAddr; 
+	private String userCnt; 
+	private String regDate;
 	
 	
 	public String getSeq() {

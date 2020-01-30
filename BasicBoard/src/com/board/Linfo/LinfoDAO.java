@@ -11,21 +11,21 @@ public class LinfoDAO {
 		Connection conn = null;
 		
 		try {
-			//mysql jdbc driver ·Îµù
+		
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			//DB¿¬°á ¹®ÀÚ¿­
+			
 			String url = "jdbc:mysql://182.162.89.92:3306/logon?characterEncoding=UTF-8&serverTimezone=UTC&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
 			String id = "namusoft";
 			String pwd = "namu1234";
 			
-			//dbÁ¢¼Ó
+		
 			conn = DriverManager.getConnection(url,id,pwd);
-			System.out.println("DBÁ¢¼Ó ¼º°ø");
+			System.out.println("DBï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			
 		}catch(Exception e) {
 			
-			System.out.println("Db Á¢¼Ó ½ÇÆÐ");
+			System.out.println("Db ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}
 		return conn;

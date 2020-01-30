@@ -23,9 +23,7 @@ public class BoardPagingAction implements Action{
 		String page = request.getParameter("page");
 		//String page = "1";
 		
-		//System.out.println("-----------------------------------------------page값");
-		//System.out.println(page);
-		
+	
 		if(page != null) spage = Integer.parseInt(page);
 		
 		BoardDAO dao = new BoardDAO();
@@ -34,7 +32,13 @@ public class BoardPagingAction implements Action{
 		int maxPage = (int)(listCount/5.0+0.9);
 		
 		if(spage>maxPage) spage = maxPage;
-		List<BoardVO> list = dao.getBoardListWithPaging(spage*5-4); //여기수정해야함 함수
+		List<BoardVO> list = dao.getBoardListWithPaging(spage*5-4);
+		
+
+		
+//		for(int i=0; i<list.size(); i++) {
+//			System.out.println(list.get(i));
+//		}
 		
 		int startPage = (int)(spage/5.0+0.8)*5-4;
 		int endPage = startPage +4;
@@ -46,7 +50,7 @@ public class BoardPagingAction implements Action{
 		request.setAttribute("endPage", endPage);
 		
 	
-		request.setAttribute("boardList", list); //jsp에서 list값을 받을 수 있도록함
+		request.setAttribute("boardList", list);
 		request.getRequestDispatcher(url).forward(request, response);
 	
 	}

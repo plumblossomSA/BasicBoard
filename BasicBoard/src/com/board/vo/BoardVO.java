@@ -4,15 +4,15 @@ public class BoardVO {
 	
 	//private String seq; //Number
 	private int seq;
-	private String lName; //Linux ÄÄÇ»ÅÍ ÀÌ¸§
-	private String lIp; //IPÁÖ¼Ò
-	private String pmAddr; //MAC ÁÖ¼Ò
-	private String userCnt; //»ç¿ëÀÚ¼ö
-	private String fname; //ÆÄÀÏ¾÷·Îµå
-	private String fpath; //ÆÄÀÏ°æ·Î
+	private String lName; 
+	private String lIp; 
+	private String pmAddr; 
+	private String userCnt;
+	private String fname;
+	private String fpath; 
 	
 
-	private String regDate; //µî·ÏÀÏ
+	private String regDate; //ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	public int getSeq() {
 		return seq;

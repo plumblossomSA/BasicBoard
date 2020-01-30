@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -13,23 +13,23 @@
 
 <div id="wrap" align="center">
 
-<h1>¸®´ª½º Á¤º¸</h1>
+<h1>ë¦¬ëˆ…ìŠ¤ ì •ë³´</h1>
 <table class="list" border=1>
 	
 
 
 	<tr>
-	<td colspan="2" style=" text-align:left"><a href="BoardServlet?command=board_write_form">ÄÄÇ»ÅÍµî·Ï</a></td>
+	<td colspan="2" style=" text-align:left"><a href="BoardServlet?command=board_write_form">ì»´í“¨í„°ë“±ë¡</a></td>
 	</tr>
 
 	<tr>
 		<!-- <th><div class="formDs check"><input type="checkbox" id="checkall"><label for="checkall"></label></div></th> -->
-		<th>¹øÈ£</th>
-		<th>¸®´ª½ºÀÌ¸§</th>
-		<th>¸®´ª½ºIP</th>
-		<th>PC ¸Æ ÁÖ¼Ò</th>
-		<th>»ç¿ëÀÚ¼ö</th>
-		<th>µî·Ï³¯Â¥</th>
+		<th>ë²ˆí˜¸</th>
+		<th>ë¦¬ëˆ…ìŠ¤ì´ë¦„</th>
+		<th>ë¦¬ëˆ…ìŠ¤IP</th>
+		<th>PC ë§¥ ì£¼ì†Œ</th>
+		<th>ì‚¬ìš©ìžìˆ˜</th>
+		<th>ë“±ë¡ë‚ ì§œ</th>
 	</tr>
 	<c:forEach var="board" items="${boardList}">
 		<tr>

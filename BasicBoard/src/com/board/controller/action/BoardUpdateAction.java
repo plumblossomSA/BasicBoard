@@ -23,7 +23,7 @@ public class BoardUpdateAction implements Action{
 		//vo.setSeq(request.getParameter("seq"));
 
 		vo.setSeq(Integer.parseInt(request.getParameter("seq")));
-		vo.setlName(request.getParameter("name")); //웹에서 자바로 데이터 받아오기
+		vo.setlName(request.getParameter("name")); 
 		vo.setlIp(request.getParameter("ipaddr"));
 		vo.setPmAddr(request.getParameter("macaddr"));
 		//vo.setFname(request.getParameter("fname"));

@@ -24,8 +24,7 @@ public class BoardViewAction implements Action{
 		BoardDAO dao = new BoardDAO();
 		BoardVO vo = dao.selectOneBoard(seqr);
 		
-		System.out.println("BoardViewAction.java ½ÇÇà");
-		System.out.println(vo);
+
 		
 		request.setAttribute("boardview", vo);
 		request.getRequestDispatcher(url).forward(request, response);

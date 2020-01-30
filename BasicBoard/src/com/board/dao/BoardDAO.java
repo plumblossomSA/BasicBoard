@@ -21,7 +21,6 @@ public class BoardDAO {
 	public List<BoardVO> selectAllBoards(){
 		
 		String sql = "select * from info_table2";
-		System.out.println("BoardDAO ½ÇÇà1");
 		
 		List<BoardVO> list = new ArrayList<BoardVO>();
 		Connection conn = null;
@@ -53,7 +52,6 @@ public class BoardDAO {
 	}finally {
 		DBManager.close(conn,stmt,rs);
 	}
-	System.out.println("BoardDAO ½ÇÇà2");
 	
 	return list;
 	
@@ -72,10 +70,10 @@ public class BoardDAO {
 			pstmt.setString(1, vo.getlName());
 			pstmt.setString(2, vo.getlIp());
 			pstmt.setString(3, vo.getPmAddr());
-			pstmt.setString(4, vo.getFname()); //ÆÄÀÏ µ¥ÀÌÅÍ ¹Þ±â
+			pstmt.setString(4, vo.getFname()); 
 			//pstmt.setString(4, vo.getRegDate());
 			
-			pstmt.executeUpdate();
+			pstmt.executeUpdate();		
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -101,7 +99,7 @@ public class BoardDAO {
 			
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) { //ÇÑ Çà °¡Á®¿À±â
+			if(rs.next()) {
 				
 				vo = new BoardVO();
 				
@@ -138,7 +136,7 @@ public class BoardDAO {
 			 pstmt.setString(3, vo.getPmAddr());
 			 pstmt.setInt(4, vo.getSeq());
 	        
-			 System.out.println("update¹® Ãâ·Â");
+			 System.out.println("updateï¿½ï¿½ ï¿½ï¿½ï¿½");
 			 System.out.println(pstmt);
 			 pstmt.executeUpdate();
 
@@ -163,7 +161,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getSeq());
 			
-			System.out.println("»èÁ¦ SQL ¹®Àå Ãâ·Â");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ SQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
 			System.out.println(pstmt);
 			
 			pstmt.executeUpdate();
@@ -176,7 +174,7 @@ public class BoardDAO {
 	}
 	
 	//public int getBoardCnt(BoardVO vo) {
-	public int getBoardCnt() { //°Ô½Ã±Û ¼ö Á¶È¸
+	public int getBoardCnt() { 
 		
 		String sql = "SELECT COUNT(*) FROM info_table2;";
 		int boardListcnt = 0;
