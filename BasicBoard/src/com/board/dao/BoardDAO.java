@@ -4,6 +4,7 @@ import com.board.vo.*;
 import com.board.util.*;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class BoardDAO {
@@ -27,6 +28,7 @@ public class BoardDAO {
 		Statement stmt = null;
 		ResultSet rs = null;
 		
+
 		try {
 			conn = DBManager.getConnect();
 			stmt = conn.createStatement();
@@ -59,18 +61,22 @@ public class BoardDAO {
 	
 	public void insertBoard(BoardVO vo) {
 		String sql="";
-		sql="insert into info_table2(linux_name, linux_ip, pc_macaddr, fname) values(?,?,?,?)";
-		//sql="insert into info_table2(linux_name, linux_ip, pc_macaddr, create_dt) values(?,?,?,?)";
+		
+		sql="insert into info_table2(linux_name, linux_ip, pc_macaddr, fname, create_dt) values(?,?,?,?,?)";
+		//sql="insert into info_table2(linux_name, linux_ip, pc_macaddr, fname) values(?,?,?,?)";
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
+
 		try {
 			conn = DBManager.getConnect();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getlName());
 			pstmt.setString(2, vo.getlIp());
 			pstmt.setString(3, vo.getPmAddr());
-			pstmt.setString(4, vo.getFname()); 
+			pstmt.setString(4, vo.getFname());
+			pstmt.setString(5, vo.getRegDate());
 			//pstmt.setString(4, vo.getRegDate());
 			
 			pstmt.executeUpdate();		
@@ -121,7 +127,8 @@ public class BoardDAO {
 	
 	public void updateBoard(BoardVO vo) {
 		
-		String sql="update info_table2 set linux_name=?, linux_ip=?, pc_macaddr=? where seq=?";
+		//String sql="update info_table2 set linux_name=?, linux_ip=?, pc_macaddr=? where seq=?";
+		String sql="update info_table2 set linux_name=?, linux_ip=?, pc_macaddr=?, create_dt=? where seq=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -134,10 +141,10 @@ public class BoardDAO {
 	         pstmt.setString(1, vo.getlName());
 			 pstmt.setString(2, vo.getlIp());
 			 pstmt.setString(3, vo.getPmAddr());
-			 pstmt.setInt(4, vo.getSeq());
+			 pstmt.setString(4, vo.getRegDate());
+			 pstmt.setInt(5, vo.getSeq());
 	        
-			 System.out.println("update�� ���");
-			 System.out.println(pstmt);
+		
 			 pstmt.executeUpdate();
 
 	         

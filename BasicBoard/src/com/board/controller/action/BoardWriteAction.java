@@ -50,11 +50,16 @@ public class BoardWriteAction implements Action {
 		}
 		
 
+		//날짜처리
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String format_time1 = format1.format(System.currentTimeMillis());
+		
 		BoardVO vo = new BoardVO();
 		vo.setlName(multi.getParameter("name"));
 		vo.setlIp(multi.getParameter("ipaddr"));
 		vo.setPmAddr(multi.getParameter("macaddr"));
 		vo.setFname(fileName);
+		vo.setRegDate(format_time1);
 
 		BoardDAO dao = new BoardDAO();
 		dao.insertBoard(vo);
