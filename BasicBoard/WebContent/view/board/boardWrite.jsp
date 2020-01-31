@@ -9,6 +9,7 @@
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
 <title>Insert title here</title>
+
 </head>
 <body>
 	<div id="wrap" align="center">
@@ -17,7 +18,7 @@
 		 	<form name="frm" method="post" action="BoardServlet?command=board_write"  enctype="multipart/form-data" 
 		 		accept-charset="utf-8">
 			<!-- <input type="hidden" name="command" value="board_write"> -->
-			<table class="table table-striped" margin-left:auto; margin-right:auto; table-layout:fixed;>
+			<table class="table table-bordered" margin-left:auto; margin-right:auto; table-layout:fixed;>
 				<tr>
 					<th>리눅스이름</th>
 					<td><input type="text" name="name"></td>

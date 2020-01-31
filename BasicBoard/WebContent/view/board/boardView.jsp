@@ -13,7 +13,7 @@
 <body>
 	<div id="Wrap" align="center">
 		<h3>컴퓨터이름 : ${boardview.lName}</h3>
-		<table class="table table-striped" margin-left:auto; margin-right:auto; table-layout:fixed;>
+		<table class="table table-bordered" margin-left:auto; margin-right:auto; table-layout:fixed;>
 
 			<tr>
 				<th>컴퓨터이름</th>

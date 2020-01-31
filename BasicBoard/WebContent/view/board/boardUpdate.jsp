@@ -19,7 +19,7 @@
 			<input type="hidden" name="command" value="board_update">
 			<input type="hidden" name="seq" value="${boardview.seq}">
 
-			<table class="table table-striped" margin-left:auto; margin-right:auto; table-layout:fixed;>
+			<table class="table table-bordered" margin-left:auto; margin-right:auto; table-layout:fixed;>
 				<tr>
 					<th>리눅스이름</th>
 					<td><input type="text" name="name" value="${boardview.lName}"></td>
