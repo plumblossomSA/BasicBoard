@@ -49,7 +49,7 @@ function boardCheck(){
 		frm.ipaddr.focus();
 		return false;
 	}
-	if(document.frm.ipaddr.value.length==0){
+	if(document.frm.macaddr.value.length==0){
 		alert('PC 맥주소를 입력하세요');
 		frm.macaddr.focus();
 		return false;

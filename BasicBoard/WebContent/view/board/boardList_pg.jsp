@@ -37,11 +37,11 @@
 						<td><c:out value="${board.seq}" /></td>
 						<td><a
 							href="BoardServlet?command=board_view&seq=<c:out value="${board.seq}"/>">
-								<c:out value="${board.lName}" />
-						</a></td>
+								<c:out value="${board.lName}" /></a>
+						</td>
 						<td><c:out value="${board.lIp}" /></td>
 						<td><c:out value="${board.pmAddr}" /></td>
-						<td><c:out value="${board.fname}" /></td>
+						<td><a href="BoardServlet?command=board_download&fname=${board.fname}"><c:out value="${board.fname}" /></a></td>
 						<td><c:out value="${board.regDate}" /></td>
 					</tr>
 				</c:forEach>

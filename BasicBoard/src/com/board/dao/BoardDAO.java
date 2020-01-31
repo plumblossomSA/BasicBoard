@@ -161,8 +161,6 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getSeq());
 			
-			System.out.println("���� SQL ���� ���");
-			System.out.println(pstmt);
 			
 			pstmt.executeUpdate();
 		

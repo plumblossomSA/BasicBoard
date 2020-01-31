@@ -57,7 +57,9 @@ public class ActionFactory {
 			
 		}else if(command.equals("board_download")) {
 			
+			System.out.println("BoardDownAction()함수 수행시작");
 			action = new BoardDownAction();
+			
 		}
 		
 		

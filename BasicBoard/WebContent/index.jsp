@@ -21,3 +21,18 @@ response.sendRedirect("BoardServlet?command=board_list_pg");
 
 </body>
 </html>
+
+
+<!--
+//boardwrite함수 확인할떄
+		System.out.println("받은 파일 객체 이름출력해보기");
+		System.out.println(fileInput);  //fname
+		System.out.println(fileName);   //9852620200130162926.jpg
+		System.out.println(type);       //image/jpeg
+		System.out.println(fileObj);    //D:\05. git_storage\BasicBoard\BasicBoard\WebContent\file\upload\9852620200130162926.jpg
+		System.out.println(originFileName); //업로드테스트.jpg
+		System.out.println(fileExtend);  //jpg
+		System.out.println(fileSize);    //123804
+	
+-->
+		
