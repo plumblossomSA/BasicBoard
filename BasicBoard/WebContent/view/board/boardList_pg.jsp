@@ -8,18 +8,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Insert title here</title>
+
+<!-- BootStrap -->
+<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
 </head>
 <body>
 
 
 	<div id="wrap" align="center">
-		<h1>리눅스 정보</h1>
+		<h3>리눅스 정보</h3>
+		<!-- <table class="list" border=1> -->
+		  <table class="table table-striped" style="width:30; margin-left:auto; margin-right:auto; table-layout:fixed;">
+		<!-- <table class="table table-bordered"> -->
+		<!-- <table class="table table-hover"> -->
 
-		<table class="list" border=1>
 			<tr>
-				<td colspan="7" style="text-align: left"><a
+				<td colspan="6" style="text-align: left"><a
 					href="BoardServlet?command=board_write_form">컴퓨터등록</a></td>
 			</tr>
 			<tr>

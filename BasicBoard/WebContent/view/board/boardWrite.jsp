@@ -4,16 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- BootStrap -->
+<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
 <title>Insert title here</title>
 </head>
 <body>
 	<div id="wrap" align="center">
-		<h1>컴퓨터 등록</h1>
+		<h3>컴퓨터 등록</h3>
 		<!-- <form name="frm" method="post" action="BoardServlet" enctype="multipart/form-data"> -->
 		 	<form name="frm" method="post" action="BoardServlet?command=board_write"  enctype="multipart/form-data" 
 		 		accept-charset="utf-8">
 			<!-- <input type="hidden" name="command" value="board_write"> -->
-			<table>
+			<table class="table table-striped" margin-left:auto; margin-right:auto; table-layout:fixed;>
 				<tr>
 					<th>리눅스이름</th>
 					<td><input type="text" name="name"></td>

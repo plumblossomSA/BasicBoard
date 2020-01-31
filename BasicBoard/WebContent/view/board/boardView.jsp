@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- BootStrap -->
+<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
 <title>Insert title here</title>
 </head>
 <body>
 	<div id="Wrap" align="center">
 		<h3>컴퓨터이름 : ${boardview.lName}</h3>
-		<table border=1 class="list">
+		<table class="table table-striped" margin-left:auto; margin-right:auto; table-layout:fixed;>
 
 			<tr>
 				<th>컴퓨터이름</th>
