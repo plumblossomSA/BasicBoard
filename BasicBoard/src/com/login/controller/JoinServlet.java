@@ -17,6 +17,11 @@ public class JoinServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
+		request.getRequestDispatcher("view/login/join.jsp").forward(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		
 		request.setCharacterEncoding("utf-8");
 		
 		String name=request.getParameter("name");

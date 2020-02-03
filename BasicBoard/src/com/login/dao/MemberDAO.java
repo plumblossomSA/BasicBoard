@@ -79,7 +79,7 @@ public class MemberDAO {
 	public int confirmID(String userid) {
 		
 		System.out.println("confirmID dao");
-		int result=-1;
+		int result = -1;
 		String sql ="select user_id from user_info where user_id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -88,7 +88,7 @@ public class MemberDAO {
 		try {
 			conn = DBManager.getConnect();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  userid);
+			pstmt.setString(1, userid);
 			
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -100,30 +100,38 @@ public class MemberDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			DBManager.close(conn, pstmt,rs);
+			DBManager.close(conn, pstmt, rs);
 		}
 		
+		System.out.println(result);
 		return result;
+		
 	}
 	
 	public int insertMember(MemberVO vo) {
 		
 		int result = 0;
-		String sql ="insert into values (?,?,?,?,?,?)";
+		String sql ="insert into user_info (user_id, user_pw, user_name, email, mobile, admin) values (?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			conn = DBManager.getConnect();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  vo.getUname());
-			pstmt.setString(2,  vo.getUid());
-			pstmt.setString(3, vo.getUpw());
+			
+			pstmt.setString(1,  vo.getUid());
+			pstmt.setString(2, vo.getUpw());
+			pstmt.setString(3,  vo.getUname());
 			pstmt.setString(4, vo.getUemail());
 			pstmt.setString(5,  vo.getUmobile());
 			pstmt.setInt(6,  vo.getAdmin());
 			
+			System.out.println(pstmt);
+			
+			
 			result = pstmt.executeUpdate();
+			System.out.println("result값 출력");
+			System.out.println(result);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

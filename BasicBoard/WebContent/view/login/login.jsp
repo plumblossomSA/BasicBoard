@@ -20,6 +20,7 @@
 <script src="assets/bootstrap/bootstrap4-alpha3.min.js"></script>
 <script src="assets/web-analytics/overview.js"></script>
 </head>
+
 <style>
 #iframes {
 	width: 100%;
@@ -46,7 +47,7 @@ html, body {
 }
 </style>
 <body>
-<br>
+	<br>
 	<h2 align=center>로그인</h2>
 	<form action="login.do" method="post" name="frm">
 		<table align=center>
@@ -59,19 +60,16 @@ html, body {
 				<td><input type="password" name="upw"></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" value="로그인" onclick="return loginCheck()" /> 
-					<input type="reset" value="취소" />
-					 <input type="button" value="회원 가입" onclick="location.href='join.do'"> 
-				</td>
+				<td colspan="2" align="center"><input type="submit" value="로그인"
+					onclick="return loginCheck()" /> <input type="reset" value="취소" />
+					<input type="button" value="회원 가입"
+					onclick="location.href='join.do'"></td>
 			</tr>
 			<tr>
 				<td colspan="2">${message}</td>
 			</tr>
 		</table>
-
 	</form>
-
 </body>
 
 <script type="text/javascript">

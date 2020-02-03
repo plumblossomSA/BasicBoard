@@ -16,6 +16,8 @@ public class IdCheckServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		String userid = request.getParameter("userid");
+		System.out.println("서블릿에서 아이디 잘 들어왔는지 확인");
+		System.out.println(userid);
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		

@@ -16,9 +16,10 @@
 			</tr>
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="userid" size="20"> <input
-					type="hidden" name="reid" value=""> <input type="button"
-					value="중복체크" onclick="idCheck()"></td>
+				<td><input type="text" name="userid" size="20"> 
+				<input type="hidden" name="reid" value=""> 
+				<input type="button" value="중복체크" onclick="idCheck()"></td>
+			</tr>
 			<tr>
 				<td>암호</td>
 				<td><input type="password" name="pwd" size="20"></td>
@@ -47,6 +48,7 @@
 		</table>
 	</form>
 </body>
+
 <script type="text/javascript">
 function idCheck(){
 	if(document.frm.userid.value==""){
@@ -55,11 +57,11 @@ function idCheck(){
 		return;
 	}
 	
-	var url="idCheck.do?userid="+document.frm.userid.value;
+	var url = "idCheck.do?userid="+document.frm.userid.value;
 	
-	var settting="toolbar=no, menubar=no, scrollbars=yes, resizable="no," + "width=450, height=200";
+	var setting = "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200";
 	
-	window.open(url,"_blank_1",setting);
+	window.open(url, "_blank_1", setting);
 }
 
 function joinCheck(){
@@ -97,4 +99,5 @@ function joinCheck(){
 	return true;
 }
 </script>
+
 </html>
