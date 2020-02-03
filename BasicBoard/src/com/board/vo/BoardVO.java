@@ -12,7 +12,7 @@ public class BoardVO {
 	private String fpath; 
 	
 
-	private String regDate; //�����
+	private String regDate; 
 	
 	public int getSeq() {
 		return seq;

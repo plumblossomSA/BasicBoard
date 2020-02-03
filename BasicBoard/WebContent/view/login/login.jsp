@@ -62,7 +62,7 @@ html, body {
 				<td colspan="2" align="center">
 					<input type="submit" value="로그인" onclick="return loginCheck()" /> 
 					<input type="reset" value="취소" />
-					<input type="button" value="회원가입" onclick="location.href='join.do'" />
+					 <input type="button" value="회원 가입" onclick="location.href='join.do'"> 
 				</td>
 			</tr>
 			<tr>

@@ -2,6 +2,8 @@ package com.login.dao;
 
 import com.board.util.*;
 import com.login.vo.*;
+import com.sun.corba.se.impl.ior.GenericTaggedComponent;
+
 import java.sql.*;
 
 public class MemberDAO {
@@ -76,12 +78,24 @@ public class MemberDAO {
 	
 	public int confirmID(String userid) {
 		
-		String sql ="";
+		System.out.println("confirmID dao");
+		int result=-1;
+		String sql ="select user_id from user_info where user_id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
+			conn = DBManager.getConnect();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  userid);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = 1;
+			}else {
+				result = -1;
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -89,7 +103,35 @@ public class MemberDAO {
 			DBManager.close(conn, pstmt,rs);
 		}
 		
-		return 0;
+		return result;
+	}
+	
+	public int insertMember(MemberVO vo) {
+		
+		int result = 0;
+		String sql ="insert into values (?,?,?,?,?,?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getConnect();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  vo.getUname());
+			pstmt.setString(2,  vo.getUid());
+			pstmt.setString(3, vo.getUpw());
+			pstmt.setString(4, vo.getUemail());
+			pstmt.setString(5,  vo.getUmobile());
+			pstmt.setInt(6,  vo.getAdmin());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+		
+		return result;
 	}
 	
 	
