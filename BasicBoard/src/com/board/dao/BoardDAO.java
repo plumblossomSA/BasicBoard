@@ -4,7 +4,7 @@ import com.board.vo.*;
 import com.board.util.*;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
+//import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class BoardDAO {

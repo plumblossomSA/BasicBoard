@@ -36,7 +36,7 @@
 }
 
 .sidenav {
-	background-color: #f1f1f1;
+	background-color: #e8e8e8; 
 	position: fixed;
 	width: 300px;
 	height: 100%;

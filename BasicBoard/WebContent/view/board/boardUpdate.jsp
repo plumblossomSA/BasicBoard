@@ -3,23 +3,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- BootStrap -->
-<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Insert title here</title>
+<!-- stylesheets -->
+<link href="assets/fonts/font-roboto.css" rel="stylesheet">
+<link href="assets/bootstrap/bootstrap4-alpha3.min.css" rel="stylesheet">
+<link href="assets/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="assets/web-analytics/style.css" rel="stylesheet">
+
+<!-- scripts -->
+<script src="assets/jquery/jquery-3.1.0.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/bootstrap4-alpha3.min.js"></script>
+<script src="assets/web-analytics/overview.js"></script>
 </head>
+
+
+<style>
+#iframes {
+	width: 100%;
+	height: 360px;
+	border: 0;
+}
+
+.iframes2 {
+	width: 100%;
+	height: 350px;
+	border: 0;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+
 <body>
 	<div id="wrap" align="center">
+	<br>
 		<h3>게시글 수정</h3>
 		<form action="BoardServlet" method="post" name="frm">
 			<input type="hidden" name="command" value="board_update">
 			<input type="hidden" name="seq" value="${boardview.seq}">
 
-			<table class="table table-bordered" margin-left:auto; margin-right:auto; table-layout:fixed;>
+			<table class="table table-bordered"
+							style="width: 30; margin-left: auto; margin-right: auto; table-layout: fixed;">
 				<tr>
 					<th>리눅스이름</th>
 					<td><input type="text" name="name" value="${boardview.lName}"></td>
