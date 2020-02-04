@@ -51,7 +51,6 @@
 	onunload="">
 
 	<form action="logout.do">
-
 		<!-- header -->
 		<nav class="navbar navbar-fixed-top" id="header">
 		<div class="container-fluid">
@@ -59,14 +58,14 @@
 				<div class="brand">
 					<a href="index.jsp"> <span class="hidden-xs-down m-r-3">안녕하세요
 							${loginUser.uid}님</span><span class="lead"></span></a>
-					<input type="submit" value="로그 아웃"> 
-					<!-- <a href="">로그아웃</a> -->
+					<!-- <input type="submit" value="로그 아웃"> -->
+					<a href="">로그아웃</a>
 				</div>
 			</div>
 		</div>
-
+ 
 		</nav>
-
+	      
 		<!-- /header -->
 
 

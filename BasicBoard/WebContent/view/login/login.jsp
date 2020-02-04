@@ -50,7 +50,7 @@ html, body {
 	<br>
 	<h2 align=center>로그인</h2>
 	<form action="login.do" method="post" name="frm">
-		<table align=center>
+		<table align=center class="table table-bordered" style="width: 30; margin-left: auto; margin-right: auto; table-layout: fixed;">
 			<tr>
 				<td>아이디</td>
 				<td><input type="text" name="uid" value="${uid}"></td>

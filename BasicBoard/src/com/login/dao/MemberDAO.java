@@ -60,7 +60,7 @@ public class MemberDAO {
 		
 		MemberVO vo = null;
 		
-		String sql="select * from user_info where userid=?";
+		String sql="select * from user_info where user_id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -74,11 +74,16 @@ public class MemberDAO {
 			
 			if(rs.next()) {
 				vo = new MemberVO();
-				vo.setUname(rs.getString(""));
+				vo.setUname(rs.getString("user_id"));
+				vo.setUid(rs.getString("user_id"));
+				vo.setUpw(rs.getString("user_name"));
+				vo.setUemail(rs.getString("email"));
+				vo.setUmobile(rs.getString("mobile"));
+				vo.setAdmin(rs.getInt("admin"));
 			}
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}finally {
 			//DBManager.close(conn, pstmt,rs);
 		}
