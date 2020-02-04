@@ -17,7 +17,8 @@
 <!-- stylesheets -->
 <link href="assets/fonts/font-roboto.css" rel="stylesheet">
 <link href="assets/bootstrap/bootstrap4-alpha3.min.css" rel="stylesheet">
-<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="assets/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
 <link href="assets/web-analytics/style.css" rel="stylesheet">
 
 <!-- scripts -->
@@ -36,7 +37,7 @@
 }
 
 .sidenav {
-	background-color: #e8e8e8; 
+	background-color: #e8e8e8;
 	position: fixed;
 	width: 300px;
 	height: 100%;
@@ -47,47 +48,50 @@
 
 <body>
 
-	<!-- header -->
-	<nav class="navbar navbar-fixed-top" id="header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<div class="brand">
-				<a href="index.jsp"> <span class="hidden-xs-down m-r-3">Basic
-						Board</span><span class="lead"></span>
-				</a>
+	<form action="login.do">
+		<!-- header -->
+		<nav class="navbar navbar-fixed-top" id="header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<div align="right">안녕하세요 ${loginUser.uname}({${loginUser.uid})님</div>
+				<div class="brand">
+					<a href="index.jsp"> <span class="hidden-xs-down m-r-3">Basic
+							Board</span><span class="lead"></span></a>
+				</div>
+				
 			</div>
-
 		</div>
-	</div>
-	</nav>
-	<!-- /header -->
+		</nav>
+		<!-- /header -->
 
 
-	<!-- sidebar -->
-	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">-->
-	<nav class="col-sm-3 sidenav"> <!-- <div class="sidebar-toggle" id="sidebar"> -->
-	<ul class="nav nav-sidebar">
-		<li><a href="main_frame.jsp"> <i
-				class="fa fa-clock-o fa-lg fa-fw" aria-hidden="true"></i> <span>MENU1</span>
-		</a></li>
-		<li role="separator" class="divider"></li>
-		<li><a href="main_frame.jsp" target="iframes"> <i
-				class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i> <span>MENU2</span>
-		</a></li>
-		<li role="separator" class="divider"></li>
-	</ul>
-	<!-- </div> --> </nav>
-	<!-- /sidebar -->
+
+		<!-- sidebar -->
+		<!-- <nav class="navbar navbar-inverse navbar-fixed-top">-->
+		<nav class="col-sm-3 sidenav"> <!-- <div class="sidebar-toggle" id="sidebar"> -->
+		<ul class="nav nav-sidebar">
+			<li><a href="main_frame.jsp"> <i
+					class="fa fa-clock-o fa-lg fa-fw" aria-hidden="true"></i> <span>MENU1</span>
+			</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="main_frame.jsp" target="iframes"> <i
+					class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i> <span>MENU2</span>
+			</a></li>
+			<li role="separator" class="divider"></li>
+		</ul>
+		<!-- </div> --> </nav>
+		<!-- /sidebar -->
 
 
-	<!-- page-content-wrapper -->
-	<div class="page-content-toggle" id="page-content-wrapper">
-		<div class="container-fluid" style="padding: 0rem; margin: 0rem">
-			<iframe name="iframes" id='iframes'
-				src="BoardServlet?command=board_list_pg"> </iframe>
-
-		</div>
 		<!-- page-content-wrapper -->
+		<div class="page-content-toggle" id="page-content-wrapper">
+			<div class="container-fluid" style="padding: 0rem; margin: 0rem">
+				<iframe name="iframes" id='iframes'
+					src="BoardServlet?command=board_list_pg"> </iframe>
+
+			</div>
+			<!-- page-content-wrapper -->
+	</form>
 </body>
 </html>
 

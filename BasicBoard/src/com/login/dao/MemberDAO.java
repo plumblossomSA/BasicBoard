@@ -24,7 +24,7 @@ public class MemberDAO {
 		System.out.println(pw);
 		
 		int result = -1;
-		String sql = "select user_pw from user_info where user_id=?";
+		String sql = "select user_pw from user_info where user_id=?"; //id에 맞는 비밀번호 컬럼 조회
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -39,42 +39,54 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				if (rs.getString("user_pw") != null && rs.getString("user_pw").equals(pw)) {
-					result = 1;
+					result = 1; //비밀번호 O
 				} else {
-					result = 0;
+					result = 0; //비밀번호 X
 				}
 			}else {
-				result = -1;
+				result = -1; //아이디가 없음.
 			}
 			
 		} catch (Exception e) {
 
 		} finally {
-			DBManager.close(conn, pstmt,rs);
+			DBManager.close(conn, pstmt, rs);
 		}
 		return result;
 	}
+	
 	
 	public MemberVO getMember(String userid) {
 		
 		MemberVO vo = null;
 		
-		String sql="";
+		String sql="select * from user_info where userid=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
+			conn = DBManager.getConnect();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				vo = new MemberVO();
+				vo.setUname(rs.getString(""));
+			}
 			
 		}catch(Exception e) {
 			
 		}finally {
-			DBManager.close(conn, pstmt,rs);
+			//DBManager.close(conn, pstmt,rs);
 		}
 		
 		return vo;
 		
 	}
+	
 	
 	public int confirmID(String userid) {
 		
@@ -107,6 +119,7 @@ public class MemberDAO {
 		return result;
 		
 	}
+	
 	
 	public int insertMember(MemberVO vo) {
 		
